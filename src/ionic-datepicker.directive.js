@@ -215,9 +215,9 @@
                             dateString: tempDate.toString(),
                              dateDisabled: dateDisabled
                         });
-                        if (tempDate.getDate() == current_date.getDate()) {
-                            scope.dateSelected(scope.dayList[scope.dayList.length - 1]);
-                        };
+                        // if (tempDate.getDate() == current_date.getDate()) {
+                        //     scope.dateSelected(scope.dayList[scope.dayList.length - 1]);
+                        // };
                     }
 
                     //To set Monday as the first day of the week.
