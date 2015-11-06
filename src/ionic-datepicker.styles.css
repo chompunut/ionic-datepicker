@@ -49,11 +49,11 @@
 }
 
 .ionic_datepicker .select_section label {
-  padding: 12px;
+  padding: 24px;
 }
 
 .ionic_datepicker .select_section select {
-  font-size: 12px;
+  font-size: 20px;
   font-weight: bold;
   padding: 2px 10px;
   direction: ltr;
