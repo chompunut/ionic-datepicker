@@ -14,7 +14,7 @@
 }
 
 .ionic_datepicker .date_col:hover {
-  background: rgba(56, 126, 245, 0.5);
+  background: none;
   cursor: pointer;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .ionic_datepicker .today {
-  background-color: rgba(186, 186, 186, 1);
+  background-color: rgba(186, 186, 186, 1) !important;
   color: #434753;
 }
 
