@@ -314,9 +314,9 @@
 
                         dateSelected();
 
-                        if (scope.templateType.toLowerCase() === 'modal') {
+                        if (scope.templateType.toLowerCase() === 'modal' && scope.modal) {
                             scope.closeModal();
-                        } else {
+                        } else if (scope.popup) {
                             scope.popup.close();
                         }
                     }
