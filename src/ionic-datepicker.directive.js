@@ -293,6 +293,13 @@
                     scope.date_selection.selected = true;
                     scope.date_selection.selectedDate = new Date(date.dateString);
                     scope.selectedDateFull = scope.date_selection.selectedDate;
+                    if (scope.closeOnSelect) {
+                        if (scope.templateType === 'modal' && scope.modal) {
+                            scope.closeModal();
+                        } else if (scope.popup) {
+                            scope.popup.close();
+                        }
+                    }
                 };
 
                 var selectedInputDateObject = {
