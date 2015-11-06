@@ -1,3 +1,6 @@
+.ionic_datepicker {
+  height: 380px;
+}
 .ionic_datepicker .selected_date_full {
   color: #387EF5;
   font-weight: bold;
@@ -63,6 +66,10 @@
   left: 0;
   width: 100%;
   max-width: 100%;
+}
+
+.ionic_datepicker .button-clear {
+  padding: 10px 6px;
 }
 
 .ionic_datepicker .select_section .item-select:after {
