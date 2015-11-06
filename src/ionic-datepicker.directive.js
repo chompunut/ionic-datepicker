@@ -35,10 +35,10 @@
                 scope.templateType = scope.inputObj.templateType ? (scope.inputObj.templateType) : 'popup';
                 scope.modalHeaderColor = scope.inputObj.modalHeaderColor ? (scope.inputObj.modalHeaderColor) : 'bar-stable';
                 scope.modalFooterColor = scope.inputObj.modalFooterColor ? (scope.inputObj.modalFooterColor) : 'bar-stable';
-               scope.showClear = scope.inputObj.showClear ? (scope.inputObj.showClear) : false;
+                scope.showClear = scope.inputObj.showClear ? (scope.inputObj.showClear) : false;
                 scope.clearLabel = scope.inputObj.clearLabel ? (scope.inputObj.clearLabel) : 'Clear';
                 scope.clearButtonType = scope.inputObj.clearButtonType ? (scope.inputObj.clearButtonType) : 'button-stable cal-button';
-               scope.dateFormat = scope.inputObj.dateFormat ? (scope.inputObj.dateFormat) : 'dd-MM-yyyy';
+                scope.dateFormat = scope.inputObj.dateFormat ? (scope.inputObj.dateFormat) : 'dd-MM-yyyy';
                 scope.closeOnSelect = scope.inputObj.closeOnSelect ? (scope.inputObj.closeOnSelect) : false;
 
                 scope.enableDatesFrom = {
@@ -99,7 +99,7 @@
                         scope.enableDatesFrom.epoch = scope.inputObj.from.getTime();
                         if (scope.enableDatesFrom.epoch > scope.currentMonthFirstDayEpoch) {
                             scope.prevMonthDisable = true;
-                    }
+                        }
                     }
 
                     if (scope.inputObj.to) {
@@ -133,7 +133,7 @@
                 } else {
                     scope.weekNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
                 }
-                scope.yearsList = IonicDatepickerService.getYearsList(scope.inputObj.from, scope.inputObj.to);
+                scope.yearsList = (scope.inputObj.yearList) ? scope.inputObj.yearList : IonicDatepickerService.getYearsList(scope.inputObj.from, scope.inputObj.to);
 
                 //Setting whether to show Monday as the first day of the week or not.
                 if (scope.inputObj.mondayFirst) {
@@ -213,7 +213,7 @@
                             year: tempDate.getFullYear(),
                             day: tempDate.getDay(),
                             dateString: tempDate.toString(),
-                             dateDisabled: dateDisabled
+                            dateDisabled: dateDisabled
                         });
                         if (tempDate.getDate() == current_date.getDate()) {
                             scope.dateSelected(scope.dayList[scope.dayList.length - 1]);
@@ -349,9 +349,9 @@
                         if (outSideToFrom == true) {
                             scope.inputObj.callback(undefined);
                         } else {
-                        scope.inputObj.callback(scope.date_selection.selectedDate);
+                            scope.inputObj.callback(scope.date_selection.selectedDate);
+                        }
                     }
-                }
                 }
 
                 //Called when the user clicks on the 'Today' button
@@ -405,20 +405,20 @@
                 };
 
                 if (scope.templateType.toLowerCase() === 'modal') {
-                //Getting the reference for the 'ionic-datepicker' modal.
-                $ionicModal.fromTemplateUrl('ionic-datepicker-modal.html', {
-                    scope: scope,
-                    animation: 'slide-in-up'
-                }).then(function (modal) {
-                    scope.modal = modal;
-                });
-                scope.openModal = function () {
-                    scope.modal.show();
-                };
+                    //Getting the reference for the 'ionic-datepicker' modal.
+                    $ionicModal.fromTemplateUrl('ionic-datepicker-modal.html', {
+                        scope: scope,
+                        animation: 'slide-in-up'
+                    }).then(function (modal) {
+                        scope.modal = modal;
+                    });
+                    scope.openModal = function () {
+                        scope.modal.show();
+                    };
 
-                scope.closeModal = function () {
-                    scope.modal.hide();
-                };
+                    scope.closeModal = function () {
+                        scope.modal.hide();
+                    };
 
                 }
                 //Called when the user clicks on the button to invoke the 'ionic-datepicker'
@@ -441,7 +441,7 @@
                             templateUrl: 'ionic-datepicker-popup.html',
                             title: scope.titleLabel,
                             subTitle: '',
-                            cssClass:'picker-body',
+                            cssClass: 'picker-body',
                             scope: scope,
                             buttons: buttons
                         });
