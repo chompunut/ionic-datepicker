@@ -20,6 +20,7 @@
 
 .ionic_datepicker .date_col:active {
   background-color: #434753;
+  color: white;
   cursor: pointer;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .ionic_datepicker .date_selected {
-  background-color: #434753;
+  background-color: #434753 !important;
   color: white;
 }
 
