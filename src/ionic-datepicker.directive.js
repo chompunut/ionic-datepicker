@@ -307,21 +307,6 @@
                 };
                 scope.dateSelected(selectedInputDateObject);
 
-                // Watch for selected date change
-                scope.$watch('date_selection.selectedDate', function (newVal, oldVal) {
-                    // Close modal/popup if date selected
-                    if (scope.closeOnSelect) {
-
-                        dateSelected();
-
-                        if (scope.templateType.toLowerCase() === 'modal' && scope.modal) {
-                            scope.closeModal();
-                        } else if (scope.popup) {
-                            scope.popup.close();
-                        }
-                    }
-                });
-
                 //Called when the user clicks on any date.
                 function dateCleared() {
                     scope.date_selection.submitted = true;
